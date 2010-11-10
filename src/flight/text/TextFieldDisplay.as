@@ -97,7 +97,7 @@ package flight.text
 		/**
 		 * @inheritDoc
 		 */
-		public function get style():Object { return _style ||= new Style(this); }
+		public function get style():Object { return _style ||= Style.getFor(this); }
 		private var _style:Style;
 		
 		/**

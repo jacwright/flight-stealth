@@ -25,6 +25,24 @@ package flight.styles
 	dynamic public class Style extends Proxy
 	{
 		/**
+		 * The style class that will be used to create new Style objects for each component or stealth display object.
+		 * Set a new style class here an any stealth display objects created afterwards will use this type of object as
+		 * its style object.
+		 */
+		public static var styleClass:Class = Style;
+
+		/**
+		 * Get a style object for the provided target. This will be of the type styleClass.
+		 * 
+		 * @param target A display object to be styled.
+		 * @return An object which can hook into a style system provided.
+		 */
+		public static function getFor(target:DisplayObject):Object
+		{
+			return new styleClass(target);
+		}
+		
+		/**
 		 * Reference to the wrapped IEventDispatcher.
 		 */
 		protected var dispatcher:EventDispatcher;

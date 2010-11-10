@@ -1,12 +1,12 @@
 /**
  *
  */
-package flight.styles.global
+package flight.utils
 {
 	import flash.utils.Proxy;
 
 	/**
-	 * A noisy object lets registered functions know whenever any of its properties have changed. It can also wrap an
+	 * A brazen object lets registered functions know whenever any of its properties have changed. It can also wrap an
 	 * object and will contain all properties of the wrapped object plus ones explicitly set on this. Values cannot be
 	 * set on a wrapped object from this noisy object, only retrieved. And values can only be retrieved from the wrapped
 	 * object when they are not set on this object explicitly.
@@ -15,19 +15,19 @@ package flight.styles.global
 	 * 5 on this object and 10 on the wrapped object, when it is deleted from this object (delete obj.foo) instead of
 	 * becoming undefined it becomes 10 (i.e. goes from 5 to 10). 
 	 */
-	dynamic public class NoisyObject extends Proxy
+	dynamic public class BrazenObject extends Proxy
 	{
 		private var listeners:Array = [];
 		private var data:Object = {};
 		private var wrap:Object;
 		private var names:Array;
 		
-		public function NoisyObject(wrap:Object = null)
+		public function BrazenObject(wrap:Object = null)
 		{
 			if (wrap) {
 				this.wrap = wrap;
-				if (wrap is NoisyObject) {
-					NoisyObject(wrap).register(onUpdate);
+				if (wrap is BrazenObject) {
+					BrazenObject(wrap).register(onUpdate);
 				}
 			}
 		}

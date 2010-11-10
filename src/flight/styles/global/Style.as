@@ -14,11 +14,12 @@ package flight.styles.global
 	import flight.data.DataChange;
 	import flight.display.RenderPhase;
 	import flight.events.StyleEvent;
-	
+	import flight.utils.BrazenObject;
+
 	/**
 	 * A style object on which dynamic style data is stored.
 	 */
-	dynamic public class Style extends NoisyObject
+	dynamic public class Style extends BrazenObject
 	{
 		private var _target:DisplayObject;
 		
