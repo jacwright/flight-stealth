@@ -98,7 +98,7 @@ package flight.display
 		 */
 		public function getStyle(property:String):*
 		{
-			return _style[property];
+			return style[property];
 		}
 		
 		/**
@@ -106,7 +106,7 @@ package flight.display
 		 */
 		public function setStyle(property:String, value:*):void
 		{
-			_style[property] = value;
+			style[property] = value;
 		}
 		
 		
